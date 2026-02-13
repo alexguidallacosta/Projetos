@@ -1,0 +1,9 @@
+DROP DATABASE IF EXISTS LojadeVinhos;
+CREATE DATABASE LojadeVinhos;
+CREATE TABLE LojadeVinhos.Regiao(codRegiao BIGINT PRIMARY KEY, nomeRegiao VARCHAR(100) NOT NULL, descricaoRegiao TEXT);
+CREATE TABLE LojadeVinhos.Vinicola(codVinicola BIGINT PRIMARY KEY, nomeVinicola VARCHAR(100) NOT NULL, descricaoVinicola TEXT, foneVinicola VARCHAR(15), emailVinicola VARCHAR(15), codRegiao BIGINT NOT NULL REFERENCES Regiao(codRegiao));
+CREATE TABLE LojadeVinhos.Vinho(codVinho BIGINT PRIMARY KEY, nomeVinho VARCHAR(50) NOT NULL, tipoVinho VARCHAR(30) NOT NULL, anoVinho INT NOT NULL, descricaoVinho TEXT, codVinicola BIGINT NOT NULL REFERENCES Vinicola(codVinicola));
+INSERT INTO LojadeVinhos.Regiao VALUES (1, "Caixias", "Lugar montanhoso de terreno seco"), (2, "Campinas", "Região nublada e fria"), (3, "Pelotas", "Altitude elevada e muito frio"), (4, "Pato Branco", "Região de alta umidade e terra fértil"), (5, "Toledo", "Terra de solo rico em sais minerais");
+INSERT INTO LojadeVinhos.Vinicola VALUES (1, "Vinhos Alegres", "Ambiente agradável em meio a jardins", "41999998888", "vinhoalegr@mail", 3), (2, "Vinhos Fortes", "Artesanato e muito carinho", "45912121313", "vinicforte@mail", 1), (3, "Vinho da Colônia", "Vinho feito de colono para colono!", "58921211212", "coloniavin@mail", 1), (4, "Vinhos Glória", "Seco", "55987654321", "vinhosglo@mail", 2), (5, "Vinicola Dollabelo", "Localizada na Rua Pessoa, N23", "21913572468", "dollabelo@mail", 4); 
+INSERT INTO LojadeVinhos.Vinho(codVinho, nomeVinho, tipoVinho, anoVinho, codVinicola) VALUES (1, "Casa Azul", "Seco", 1990, 1), (2, "Topo de Caixias", "Suave", 1975, 1), (3, "Sombra de Campinas", "Suave", 2000, 2), (4, "Fazenda do Riacho", "Suave", 1987, 3), (5, "Safra 1998", "Seco", 1998, 4);
+SELECT nomeVinho, anoVinho, nomeVinicola, nomeRegiao FROM LojadeVinhos.Vinho INNER JOIN LojadeVinhos.Vinicola ON Vinho.codVinicola = Vinicola.codVinicola INNER JOIN LojadeVinhos.Regiao ON Vinicola.codRegiao = Regiao.codRegiao;
