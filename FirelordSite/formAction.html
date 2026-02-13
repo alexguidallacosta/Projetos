@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Firelord - Bem Vindo!</title>
+    <link rel="icon" type="image" href="IMG\fogoicon.webp">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/signupbackground.css">
+<script>
+    const img1 = "../IMG/backgroundsignup.jpg";
+    const img2 = "../IMG/backgrundindex.png";
+
+    // Estado atual
+    let atual = 2;
+
+    document.getElementById("bt-img").addEventListener("click", function () {
+        const body = document.body;
+
+        if (atual === 1) {
+            body.style.backgroundImage = `url(${img2})`;
+            atual = 2;
+        } else {
+            body.style.backgroundImage = `url(${img1})`;
+            atual = 1;
+        }
+    });
+</script>
+</head>
+<body>
+    <div class="topbar">
+            <a href="index.html">🔥 Firelord</a>
+            <a href="form.html">Se Inscreva</a>
+            <a href="about.html">Mais Informações</a>
+            <button id="bt-img" class="bt-img">Mudar Fundo</button>
+    </div>
+    <div class="text-box">
+        <h1>Párabens pela Inscrição!</h1>
+        <p>Nos encontramos no Vale da Floresta Escura, ou no Cinzento Castelo, seja onde for, a diverção é garantida</p>
+    </div>
+
+</body>
+</html>

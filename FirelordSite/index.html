@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>FireLord</title>
+    <link rel="icon" type="image" href="IMG\fogoicon.webp">
+    <link rel="stylesheet" href="CSS/style.css">
+<script>
+    const img1 = "../IMG/backgroundsignup.jpg";
+    const img2 = "../IMG/backgrundindex.png";
+
+    // Estado atual
+    let atual = 1;
+
+    document.getElementById("bt-img").addEventListener("click", function () {
+        const body = document.body;
+
+        if (atual === 1) {
+            body.style.backgroundImage = `url(${img2})`;
+            atual = 2;
+        } else {
+            body.style.backgroundImage = `url(${img1})`;
+            atual = 1;
+        }
+    });
+</script>
+</head>
+<body>
+  <div class="topbar">
+    <a href="index.html">🔥 Firelord</a>
+    <a href="form.html">Se Inscreva</a>
+    <a href="about.html">Mais Informações</a>
+    <button id="bt-img" class="bt-img">Mudar Fundo</button>
+    </div>
+  <div class="content">
+    <div class="title">
+      <h1 class="titleTop">Firelord</h1>
+      <p class="titleBottom">Sobreviva a infinitas hordas das trevas e proteja a chama primordial!</p>
+    </div>
+    <div class="download-container">
+      <a href="instaladordojogo.txt" class="download-btn">Baixe Aqui</a>
+    </div>
+    <h2>Um clássico entre os fãs de jogos de estratégia, elogiado pela dinamicidade e história envolvente</h2>
+  </div>
+</body>
+</html>

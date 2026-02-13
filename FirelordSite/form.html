@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Firelord - Crie sua Conta</title>
+    <link rel="icon" type="image" href="IMG\fogoicon.webp">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/signupbackground.css">
+<script>
+    const img1 = "../IMG/backgroundsignup.jpg";
+    const img2 = "../IMG/backgrundindex.png";
+
+    // Estado atual
+    let atual = 2;
+
+    document.getElementById("bt-img").addEventListener("click", function () {
+        const body = document.body;
+
+        if (atual === 1) {
+            body.style.backgroundImage = `url(${img2})`;
+            atual = 2;
+        } else {
+            body.style.backgroundImage = `url(${img1})`;
+            atual = 1;
+        }
+    });
+</script>
+</head>
+<body>
+    <div class="topbar">
+            <a href="index.html">🔥 Firelord</a>
+            <a href="form.html">Se Inscreva</a>
+            <a href="about.html">Mais Informações</a>
+            <button id="bt-img" class="bt-img">Mudar Fundo</button>
+            </div>
+    <div id="sigUpForm" class="content">      
+        <form method="POST" action="formAction.html">
+            <div class="form-conteiner">
+                <h2>Crie sua conta e começe a jogar agora!</h2>
+            <div class="form-group">
+                <label for="name"><i class="username" aria-hidden="true"></i></label>
+                <input type="text" name="name" id="name" placeholder="Crie seu Username" required>
+            </div><br>
+            <div class="form-group">
+                <label for="email"><i class="email" aria-hidden="true"></i></label>
+                <input type="email" name="email" id="email" placeholder="Escolha seu Email" required>
+            </div><br>
+            <div class="form-group">
+                <label for="password"><i class="password" aria-hidden="true"></i></label>
+                <input type="password" name="password" id="password"  placeholder="Crie sua Senha" required>
+            </div><br>
+            <div class="form-group">
+                <label for="birthdate"><i class="birthdate" aria-hidden="true"></i></label>
+                <input type="date" name="birthdate" id="birthdate" title="Insira sua Data de Nascimento">
+            </div><br>
+            <div class="form-group">
+                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required />
+                <label for="agree-term" class="label-agree-term"><span><span></span></span>Eu concordo com os <a href="#" class="term-service">termos de serviço</a></label>
+            </div><br>
+            <div class="form-group form-button">
+                <input type="submit" class="form-submit" value="Enviar">
+                <input type="reset" class="form-submit" value="Limpar">
+            </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
